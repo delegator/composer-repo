@@ -15,6 +15,6 @@ serve: ## Run PHP built-in webserver to preview the site
 	php -S localhost:8080 -t web
 
 deploy: ## Deploy the compiled site to GitHub pages
-	$(MAKE) -C web all
+	$(MAKE) -C web all GIT_REV=$(shell git rev-parse --short HEAD)
 
 all: clean build ## Compile site for production
