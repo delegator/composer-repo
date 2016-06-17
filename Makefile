@@ -7,11 +7,14 @@ build: ## Compile site
 	@./vendor/bin/satis build src/satis.json web
 
 clean: ## Clean out compiled site directory
-	rm -rf web
-	mkdir web
-	touch web/.gitkeep
+	rm -rf web/include
+	rm -f web/index.html
+	rm -f web/packages.json
 
 serve: ## Run PHP built-in webserver to preview the site
 	php -S localhost:8080 -t web
+
+deploy: ## Deploy the compiled site to GitHub pages
+	$(MAKE) -C web all
 
 all: clean build ## Compile site for production
