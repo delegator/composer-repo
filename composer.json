@@ -1,0 +1,6 @@
+{
+    "name": "delegator/repo",
+    "require": {
+        "composer/satis": "dev-master"
+    }
+}

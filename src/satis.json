@@ -1,0 +1,17 @@
+{
+    "name": "Delegator Packages",
+    "homepage": "https://packages.delegator.com",
+    "description": "Please visit https://github.com/delegator/composer-repo for additional information.",
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/Inchoo/Inchoo_PHP7.git" },
+        { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
+        { "type": "vcs", "url": "https://github.com/algolia/algoliasearch-magento.git" },
+        { "type": "vcs", "url": "https://github.com/bugsnag/bugsnag-magento.git" },
+        { "type": "vcs", "url": "https://github.com/delegator/better-tinymce.git" },
+        { "type": "vcs", "url": "https://github.com/delegator/magento.git" },
+        { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
+        { "type": "vcs", "url": "https://github.com/monsieurbiz/Mbiz_Cms.git" },
+        { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" }
+    ],
+    "require-all": true
+}
