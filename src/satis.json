@@ -2,6 +2,7 @@
     "name": "Delegator Packages",
     "homepage": "https://packages.delegator.com",
     "description": "Please visit https://github.com/delegator/composer-repo for additional information.",
+    "twig-template": "src/index.html.twig",
     "repositories": [
         { "type": "vcs", "url": "https://github.com/Inchoo/Inchoo_PHP7.git" },
         { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },

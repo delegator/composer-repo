@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{ name }} Composer Repository</title>
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="generator" content="Satis {{ constant('Composer\\Satis\\Satis::VERSION') }}" />
+    <style type="text/css">
+      .plain {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        -webkit-padding-start: 0;
+        -webkit-margin-before: 0;
+      }
+      .dont-break-out {
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header m-t-1">
+            <h1>
+                {% if name %}
+                    {{ name }}
+                {% else %}
+                    The Composer Repository
+                {% endif %}
+            </h1>
+            {% if description %}
+                <p>{{ description|raw }}</p>
+            {% endif %}
+            <div class="pull-sm-right">
+                Last updated: <time class="timeago" datetime="{{ "now"|date(constant('\DateTime::ISO8601')) }}">{{ "now"|date(constant('\DateTime::RSS')) }}</time>
+            </div>
+        </div>
+        <div class="content">
+            <div class="composer-json-instructions">
+                Adding the repository to <em>composer.json</em>:
+                <pre class="bg-inverse"><code>{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "{{ url }}"
+        }
+    ]
+}</code></pre>
+              <form>
+                <fieldset class="form-group">
+                  <label for="search">Filter by package name:</label>
+                  <input type="text" id="search" autocomplete="off" class="form-control" autofocus />
+                </fieldset>
+              </form>
+
+                <div id="package-list">
+                {% for name, package in packages %}
+                    <div class="card" data-title="{{ package.highest.name }}">
+                        <a name="{{ package.highest.name }}"></a>
+                        <h3 class="card-header dont-break-out">{{ package.highest.name }}<a href="#{{ package.highest.name }}"><small>¶</small></a></h3>
+                        <div class="card-block search-ignore">
+                          {% if package.abandoned %}
+                              <p class="abandoned">
+                                  Package {{ package.highest.name }} is abandoned, you should avoid using it.
+                                  {% if package.replacement %}
+                                      Use {{ package.replacement }} instead.
+                                  {% else %}
+                                      No replacement was suggested.
+                                  {% endif %}
+                              </p>
+                          {% endif %}
+                          {% if package.highest.description %}
+                              <p class="card-title">{{ package.highest.description }}</p>
+                          {% endif %}
+                          <table class="table table-sm table-responsive">
+                              {% if package.highest.homepage %}
+                                  <tr>
+                                      <th>Homepage</th>
+                                      <td><a href="{{ package.highest.homepage }}">{{ package.highest.homepage }}</a></td>
+                                  </tr>
+                              {% endif %}
+                              {% if package.highest.license %}
+                                  <tr>
+                                      <th>License</th>
+                                      <td>{{ package.highest.license|join(', ') }}</td>
+                                  </tr>
+                              {% endif %}
+                              {% if package.highest.authors %}
+                                  <tr>
+                                      <th>Authors</th>
+                                      <td>
+                                          {% for author in package.highest.authors %}
+                                              {%- if author.homepage -%}
+                                                  <a href="{{ author.homepage }}">{{ author.name }}</a>
+                                              {%- else -%}
+                                                  {{ author.name }}
+                                              {%- endif -%}
+                                              {%- if not loop.last -%}, {% endif -%}
+                                          {% endfor %}
+                                      </td>
+                                  </tr>
+                              {% endif %}
+                              {% if package.highest.support %}
+                              <tr>
+                                  <th>Support</th>
+                                  <td>
+                                      <ul class="plain">
+                                      {% for support_type, support_url in package.highest.support %}
+                                          <li>{{ support_type|capitalize }}: <a href="{{ support_url }}">{{ support_url }}</a></li>
+                                      {% endfor %}
+                                      </ul>
+                                  </td>
+                              </tr>
+                              {% endif %}
+                              <tr>
+                                  <th>Releases</th>
+                                  <td>
+                                      {% for version in package.versions %}
+                                          {%- if version.distType -%}
+                                              <a href="{{ version.distUrl }}" title="{{ version.distReference }}">{{ version.prettyVersion }}</a>
+                                          {%- else -%}
+                                              <a href="{{ version.sourceUrl }}" title="{{ version.sourceReference }}">{{ version.prettyVersion }}</a>
+                                          {%- endif -%}
+                                          {%- if not loop.last -%}, {% endif -%}
+                                      {% endfor %}
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>Required by</th>
+                                  <td>
+                                      {% set package_dependencies = attribute(dependencies, name) %}
+                                      {% if package_dependencies|length %}
+                                          <ul>
+                                              {% for dependency in package_dependencies %}
+                                                  <li><a href="#{{ dependency }}">{{ dependency }}</a></li>
+                                              {% endfor %}
+                                          </ul>
+                                      {% endif %}
+                                  </td>
+                              </tr>
+                          </table>
+                        </div><!-- card-block -->
+                    </div><!-- card -->
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="ft">
+            <p><small>This Composer Repository is proudly powered by <a href="https://github.com/composer/satis">Satis</a> {{ constant('Composer\\Satis\\Satis::VERSION') }} - Last updated:  {{ "now"|date(constant('\DateTime::ISO8601')) }}</small></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hideseek/0.7.1/jquery.hideseek.min.js" integrity="sha384-Fq2XtzpjxLK3vnuzREQOaNyjV3rU8Eb2t7sUkEcmC6xMbLKKM10bLNOSGk3kZnnf" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.2/jquery.timeago.min.js" integrity="sha384-MPCI/e9mKGaS5YksJEmlTIIonpSyYnitbS7p4y7v5WAJ3VPkNcRbnFzu4wWIhf7Z" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $(function() {
+      $.timeago.settings.refreshMillis = 5000
+      $('time.timeago').timeago()
+      $('#search').hideseek({
+        attribute: 'data-title',
+        ignore: '.search-ignore',
+        list: '#package-list',
+        nodata: 'No results.'
+      })
+    })
+    </script>
+</body>
+</html>
