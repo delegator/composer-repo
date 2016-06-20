@@ -11,7 +11,6 @@
         { "type": "vcs", "url": "https://github.com/delegator/better-tinymce.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magento.git" },
         { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
-        { "type": "vcs", "url": "https://github.com/monsieurbiz/Mbiz_Cms.git" },
         { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" }
     ],
     "require-all": true
