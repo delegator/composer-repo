@@ -5,8 +5,9 @@
     "twig-template": "src/index.html.twig",
     "repositories": [
         { "type": "vcs", "url": "https://github.com/delegator/better-tinymce.git" },
+        { "type": "vcs", "url": "https://github.com/delegator/improvedmerge.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magento.git" },
-        { "type": "vcs", "url": "https://github.com/delegator/magerock" },
+        { "type": "vcs", "url": "https://github.com/delegator/magerock.git" },
         { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
         { "type": "vcs", "url": "https://github.com/ffuenf/Ffuenf_StockMovements.git" },
         { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
