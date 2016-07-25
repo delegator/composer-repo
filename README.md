@@ -1,4 +1,4 @@
-# Delegator Composer Repository
+# Delegator - Composer Repository
 
 Powered by [Satis][satis].
 
@@ -20,7 +20,16 @@ $ make help
 
 # Deployment
 
-[GitHub pages][github-pages] (see the gh-pages branch).
+[GitHub Pages][github-pages] (see the [`gh-pages`][gh-pages-branch] branch).
 
+```bash
+# Compile site
+$ make
+
+# After compile is successful, then
+$ make deploy
+```
+
+[gh-pages-branch]: https://github.com/delegator/composer-repo/tree/gh-pages
 [github-pages]: https://pages.github.com/
 [satis]: https://github.com/composer/satis

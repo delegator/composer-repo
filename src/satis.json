@@ -1,5 +1,5 @@
 {
-    "name": "Delegator Packages",
+    "name": "Delegator - Composer Repository",
     "homepage": "https://packages.delegator.com",
     "description": "Please visit <a href='https://github.com/delegator/composer-repo'>https://github.com/delegator/composer-repo</a> for additional information.",
     "twig-template": "src/index.html.twig",
