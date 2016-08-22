@@ -18,6 +18,29 @@ $ make serve
 $ make help
 ```
 
+# Tips
+
+When compiling this Satis repository, you will quickly exhaust GitHub's
+unauthenticated request/rate limit due to the repeated fetching of repository
+metadata. If you have not done so already, composer will prompt you to create a
+GitHub personal access token, and composer will cache your credentials in
+`~/.composer/auth.json`.
+
+# Deployment
+
+For deployment, we suggest that you place your GitHub access token in the
+`COMPOSER_AUTH` environment variable. Visit
+https://github.com/settings/tokens/new?scopes=repo to create a token with the
+required privileges.
+
+```bash
+# Place your auth token in the environment
+export COMPOSER_AUTH='{"github-oauth": {"github.com": "your_token_here"}}'
+
+# Compile the site
+$ make
+```
+
 [gh-pages-branch]: https://github.com/delegator/composer-repo/tree/gh-pages
 [github-pages]: https://pages.github.com/
 [satis]: https://github.com/composer/satis
