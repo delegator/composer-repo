@@ -2,6 +2,4 @@ vendor
 
 web/*
 !web/.gitkeep
-!web/CNAME
-!web/Makefile
 !web/favicon.ico

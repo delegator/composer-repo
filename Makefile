@@ -6,15 +6,15 @@ help:
 build: ## Compile site
 	@./vendor/bin/satis build src/satis.json web
 
-clean: ## Clean out compiled site directory
+clean: ## Clean dependencies and compiled site
+	rm -rf vendor
 	rm -rf web/include
 	rm -f web/index.html
-	rm -f web/packages.json
+
+deps: ## Install dependencies
+	composer install
 
 serve: ## Run PHP built-in webserver to preview the site
 	php -S localhost:8080 -t web
 
-deploy: ## Deploy the compiled site to GitHub pages
-	$(MAKE) -C web all GIT_REV=$(shell git rev-parse --short HEAD)
-
-all: clean build ## Compile site for production
+all: clean deps build ## Compile site for production

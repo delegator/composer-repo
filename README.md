@@ -6,7 +6,7 @@ Powered by [Satis][satis].
 
 ```bash
 # Install dependencies
-$ composer install
+$ make deps
 
 # Compile repository
 $ make build
@@ -16,18 +16,6 @@ $ make serve
 
 # Describe available make targets
 $ make help
-```
-
-# Deployment
-
-[GitHub Pages][github-pages] (see the [`gh-pages`][gh-pages-branch] branch).
-
-```bash
-# Compile site
-$ make
-
-# After compile is successful, then
-$ make deploy
 ```
 
 [gh-pages-branch]: https://github.com/delegator/composer-repo/tree/gh-pages
