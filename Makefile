@@ -14,6 +14,9 @@ clean: ## Clean dependencies and compiled site
 deps: ## Install dependencies
 	composer install
 
+deps-netlify: ## Install dependencies for deployment
+	/opt/buildhome/.phpbrew/bin/composer install
+
 serve: ## Run PHP built-in webserver to preview the site
 	php -S localhost:8080 -t web
 
