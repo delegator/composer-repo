@@ -69,7 +69,7 @@
               <form>
                 <fieldset class="form-group">
                   <label for="search">Filter by package name:</label>
-                  <input type="text" id="search" autocomplete="off" class="form-control" autofocus />
+                  <input type="text" id="search" autocomplete="off" class="form-control" />
                 </fieldset>
               </form>
 
@@ -183,6 +183,9 @@
         list: '#package-list',
         nodata: 'No results.'
       })
+      if (!window.location.hash) {
+        $('#search').focus()
+      }
     })
     </script>
 </body>
