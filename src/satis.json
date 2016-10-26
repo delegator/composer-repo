@@ -9,8 +9,9 @@
         { "type": "vcs", "url": "https://github.com/delegator/magento.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magerock.git" },
         { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
-        { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
+        { "type": "vcs", "url": "https://github.com/digitalpianism/bugfixes.git" },
         { "type": "vcs", "url": "https://github.com/magento/marketplace-eqp.git" },
+        { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
         { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" },
         {
             "type": "package",
