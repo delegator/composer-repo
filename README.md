@@ -2,6 +2,11 @@
 
 Powered by [Satis][satis].
 
+# Requirements
+
+ - PHP `~> 7.0` with [Composer][composer]
+ - make
+
 # Getting Started
 
 ```bash
@@ -41,6 +46,5 @@ export COMPOSER_AUTH='{"github-oauth": {"github.com": "your_token_here"}}'
 $ make
 ```
 
-[gh-pages-branch]: https://github.com/delegator/composer-repo/tree/gh-pages
-[github-pages]: https://pages.github.com/
+[composer]: https://getcomposer.org/
 [satis]: https://github.com/composer/satis
