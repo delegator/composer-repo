@@ -52,6 +52,26 @@
                     "package-xml": "package.xml"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "pricewaiter/magento",
+                "version": "v3.0.0-alpha3",
+                "dist": {
+                    "type": "tar",
+                    "url": "https://s3-us-west-2.amazonaws.com/pricewaiter-magento-sample-data/nypwidget-3.0.0-alpha3.tgz",
+                    "reference": null,
+                    "shasum": null
+                },
+                "require": {
+                    "magento-hackathon/magento-composer-installer": "*"
+                },
+                "type": "magento-module",
+                "extra": {
+                    "package-xml": "package.xml"
+                }
+            }
         }
     ],
     "require-all": true
