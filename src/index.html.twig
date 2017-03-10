@@ -51,7 +51,7 @@
             {% if description %}
                 <p>{{ description|raw }}</p>
             {% endif %}
-            <div class="pull-sm-right">
+            <div class="float-right">
                 Last updated: <time class="timeago" datetime="{{ "now"|date(constant('\DateTime::ISO8601')) }}">{{ "now"|date(constant('\DateTime::RSS')) }}</time>
             </div>
         </div>
