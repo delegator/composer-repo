@@ -35,7 +35,7 @@
         hyphens: auto;
       }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
 
@@ -58,7 +58,7 @@
         <div class="content">
             <div class="composer-json-instructions">
                 Adding the repository to <em>composer.json</em>:
-                <pre class="bg-inverse"><code>{
+                <pre class="bg-inverse text-white"><code>{
     "repositories": [
         {
             "type": "composer",
@@ -75,7 +75,7 @@
 
                 <div id="package-list">
                 {% for name, package in packages %}
-                    <div class="card" id="{{ package.highest.name }}" data-title="{{ package.highest.name }}">
+                    <div class="card mb-3" id="{{ package.highest.name }}" data-title="{{ package.highest.name }}">
                         <h3 class="card-header dont-break-out"><a href="#{{ package.highest.name }}" class="text-muted"><svg class="octicon-link" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a> {{ package.highest.name }}</h3>
                         <div class="card-block search-ignore">
                           {% if package.abandoned %}
@@ -174,9 +174,9 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hideseek/0.7.1/jquery.hideseek.min.js" integrity="sha384-Fq2XtzpjxLK3vnuzREQOaNyjV3rU8Eb2t7sUkEcmC6xMbLKKM10bLNOSGk3kZnnf" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.2/jquery.timeago.min.js" integrity="sha384-MPCI/e9mKGaS5YksJEmlTIIonpSyYnitbS7p4y7v5WAJ3VPkNcRbnFzu4wWIhf7Z" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.4/jquery.timeago.min.js" integrity="sha384-Lsg6PiImyd9fitJDwdG1nrsFFvFpWZW52KfancQGLVF5oT9FBrfVNPtGL2LoayFu" crossorigin="anonymous"></script>
     <script type="text/javascript">
     $(function() {
       $.timeago.settings.refreshMillis = 5000
