@@ -1,6 +1,7 @@
 {
     "name": "delegator/repo",
     "require": {
-        "composer/satis": "dev-master"
+        "composer/satis": "dev-master",
+        "mrclay/minify": "^2.3"
     }
 }
