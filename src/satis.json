@@ -12,24 +12,7 @@
         { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
         { "type": "vcs", "url": "https://github.com/magento/marketplace-eqp.git" },
         { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
-        { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" },
-        { "type": "composer", "url": "https://repo.magento.com/" },
-        {
-            "type": "package",
-            "package": {
-                "name": "shiphero/shiphero",
-                "type": "magento2-module",
-                "version": "1.1.2",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://s3.amazonaws.com/shiphero/magento_2/Shiphero-1.1.2.zip"
-                },
-                "require": {
-                    "php": "~5.5.0|~5.6.0|~7.0.0",
-                    "magento/framework": "~100.0"
-                }
-            }
-        }
+        { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" }
     ],
     "require-all": true
 }
