@@ -40,10 +40,10 @@ required privileges.
 
 ```bash
 # Place your auth token in the environment
-export COMPOSER_AUTH='{"github-oauth": {"github.com": "your_token_here"}}'
+$ export COMPOSER_AUTH='{"github-oauth": {"github.com": "your_token_here"}}'
 
 # Compile the site
-$ make
+$ rake
 ```
 
 [composer]: https://getcomposer.org/
