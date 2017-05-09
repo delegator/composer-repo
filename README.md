@@ -5,22 +5,22 @@ Powered by [Satis][satis].
 # Requirements
 
  - PHP `~> 7.0` with [Composer][composer]
- - make
+ - Ruby with rake
 
 # Getting Started
 
 ```bash
 # Install dependencies
-$ make deps
+$ rake deps
 
 # Compile repository
-$ make build
+$ rake build
 
 # Preview the site at http://localhost:8080/
-$ make serve
+$ rake serve
 
-# Describe available make targets
-$ make help
+# Describe available rake targets
+$ rake -T
 ```
 
 # Tips

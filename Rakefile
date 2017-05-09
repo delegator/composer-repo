@@ -20,12 +20,7 @@ end
 
 desc 'Install dependencies'
 task :deps do
-  flags = ' --no-dev --no-interaction --quiet --optimize-autoloader'
-  if ENV['NETLIFY'] == 'true'
-    sh '/opt/buildhome/.phpbrew/bin/composer install' + flags
-  else
-    sh 'composer install' + flags
-  end
+  sh 'composer install --no-dev --no-interaction --quiet --optimize-autoloader'
 end
 
 desc 'Run PHP built-in webserver to preview the site'

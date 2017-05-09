@@ -1,7 +1,9 @@
 {
-    "name": "delegator/repo",
+    "name": "delegator/composer-repo",
+    "description": "Custom Delegator package repository",
+    "license": "Apache-2.0",
     "require": {
-        "composer/satis": "dev-master",
+        "composer/satis": "^1.0.0-alpha3",
         "mrclay/minify": "^2.3"
     }
 }
