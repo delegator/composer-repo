@@ -1,0 +1,17 @@
+{
+  "caseSensitive": false,
+  "collapseBooleanAttributes": true,
+  "collapseWhitespace": true,
+  "conservativeCollapse": false,
+  "html5": true,
+  "minifyJS": true,
+  "minifyCSS": true,
+  "processScripts": [
+    "application/ld+json"
+  ],
+  "removeComments": true,
+  "removeEmptyAttributes": true,
+  "removeRedundantAttributes": true,
+  "sortAttributes": true,
+  "sortClassName": true
+}

@@ -3,8 +3,7 @@
     "description": "Custom Delegator package repository",
     "license": "Apache-2.0",
     "require": {
-        "php": "^7.1.4",
-        "composer/satis": "^1.0.0-alpha3",
-        "mrclay/minify": "^2.3"
+        "php": "^7.1.5",
+        "composer/satis": "^1.0.0-alpha3"
     }
 }

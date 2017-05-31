@@ -8,7 +8,8 @@ end
 
 desc 'Minify HTML'
 task :minify do
-  sh 'php script/htmlmin.php'
+  sh './node_modules/.bin/html-minifier -c _html-minifier-conf.json web/index.html -o web/tmp.html'
+  sh 'mv web/tmp.html web/index.html'
 end
 
 desc 'Clean dependencies and compiled site'
@@ -21,6 +22,7 @@ end
 desc 'Install dependencies'
 task :deps do
   sh 'composer install --no-dev --no-interaction --quiet --optimize-autoloader'
+  sh 'yarn install --pure-lockfile'
 end
 
 desc 'Run PHP built-in webserver to preview the site'

@@ -4,7 +4,8 @@ Powered by [Satis][satis].
 
 # Requirements
 
- - PHP `~> 7.0` with [Composer][composer]
+ - PHP `~> 7.1.5` with [Composer][composer]
+ - Node.js with Yarn
  - Ruby with rake
 
 # Getting Started
