@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+rm -rf vendor
+rm -rf web/include
+rm -f web/index.html

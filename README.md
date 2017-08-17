@@ -2,29 +2,25 @@
 
 Powered by [Satis][satis].
 
-# Requirements
+## Requirements
 
- - PHP `~> 7.1.5` with [Composer][composer]
- - Node.js with Yarn
- - Ruby with rake
+ - PHP `~> 7.1.8` with [Composer][composer]
+ - bash
 
-# Getting Started
+## Getting Started
 
 ```bash
 # Install dependencies
-$ rake deps
+$ ./script/bootstrap
 
 # Compile repository
-$ rake build
+$ ./script/build
 
 # Preview the site at http://localhost:8080/
-$ rake serve
-
-# Describe available rake targets
-$ rake -T
+$ ./script/server
 ```
 
-# Tips
+## Tips
 
 When compiling this Satis repository, you will quickly exhaust GitHub's
 unauthenticated request/rate limit due to the repeated fetching of repository
@@ -32,7 +28,7 @@ metadata. If you have not done so already, composer will prompt you to create a
 GitHub personal access token, and composer will cache your credentials in
 `~/.composer/auth.json`.
 
-# Deployment
+## Deployment
 
 For deployment, we suggest that you place your GitHub access token in the
 `COMPOSER_AUTH` environment variable. Visit
@@ -43,8 +39,8 @@ required privileges.
 # Place your auth token in the environment
 $ export COMPOSER_AUTH='{"github-oauth": {"github.com": "your_token_here"}}'
 
-# Compile the site
-$ rake
+# Compile the repository for production
+$ ./script/dist
 ```
 
 [composer]: https://getcomposer.org/
