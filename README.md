@@ -4,7 +4,7 @@ Powered by [Satis][satis].
 
 ## Requirements
 
- - PHP `~> 7.1.8` with [Composer][composer]
+ - PHP `^ 7.0` with [Composer][composer]
  - bash
 
 ## Getting Started
@@ -16,7 +16,7 @@ $ ./script/bootstrap
 # Compile repository
 $ ./script/build
 
-# Preview the site at http://localhost:8080/
+# Preview the site at http://localhost:4000/
 $ ./script/server
 ```
 
