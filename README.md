@@ -4,7 +4,7 @@ Powered by [Satis][satis].
 
 ## Requirements
 
- - PHP `^ 7.0` with [Composer][composer]
+ - PHP `>= 7.1` with [Composer][composer]
  - bash
 
 ## Getting Started
