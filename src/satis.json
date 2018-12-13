@@ -6,7 +6,6 @@
     "repositories": [
         { "type": "vcs", "url": "https://github.com/delegator/better-tinymce.git" },
         { "type": "vcs", "url": "https://github.com/delegator/improvedmerge.git" },
-        { "type": "vcs", "url": "https://github.com/delegator/magento.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magerock.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magento2-scss.git" },
         { "type": "vcs", "url": "https://github.com/delegator/po-box-restrictions.git" },
