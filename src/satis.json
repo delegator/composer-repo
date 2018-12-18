@@ -4,7 +4,6 @@
     "description": "Please visit <a href='https://github.com/delegator/composer-repo'>https://github.com/delegator/composer-repo</a> for additional information.",
     "twig-template": "src/index.html.twig",
     "repositories": [
-        { "type": "composer", "url": "https://repo.magento.com/" },
         { "type": "vcs", "url": "https://github.com/delegator/better-tinymce.git" },
         { "type": "vcs", "url": "https://github.com/delegator/improvedmerge.git" },
         { "type": "vcs", "url": "https://github.com/delegator/magerock.git" },
@@ -13,7 +12,8 @@
         { "type": "vcs", "url": "https://github.com/magento/marketplace-eqp.git" },
         { "type": "vcs", "url": "https://github.com/Marko-M/Inchoo_SocialConnect.git" },
         { "type": "vcs", "url": "https://github.com/pricewaiter/magento.git" },
-        { "type": "vcs", "url": "https://github.com/ebizmarts/magemonkey.git" }
+        { "type": "vcs", "url": "https://github.com/ebizmarts/magemonkey.git" },
+        { "type": "composer", "url": "https://repo.magento.com/" }
     ],
     "require-all": true
 }
